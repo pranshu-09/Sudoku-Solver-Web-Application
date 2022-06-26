@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='logo.png') }}" class="logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                    <li><a href="{{ url_for('upload_sudoku') }}">Upload</a></li>
+                    <li><a href="{{ url_for('enter_sudoku') }}">Enter</a></li>
+                    <li><a href="https://github.com/pranshu-09/Sudoku-Detection-and-Solver" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="home_content">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <p class="warning">&#9888; {{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <h1>Welcome to Sudoku Solver!</h1>
+                <p class="mode">Select the mode of input.</p>
+                <a href="{{ url_for('upload_sudoku') }}"><img src="{{ url_for('static', filename='upload_button.png') }}"></a>
+                <a href="{{ url_for('enter_sudoku') }}"><img src="{{ url_for('static', filename='enter_button.png') }}"></a>
+            </div>
+        </nav>
+    </section>
+</body>
+</html>

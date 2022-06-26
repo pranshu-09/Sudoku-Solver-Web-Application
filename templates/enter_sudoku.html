@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='enter_sudoku.css') }}">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='logo.png') }}" class="logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('upload_sudoku') }}">Upload</a></li>
+                    <li><a href="{{ url_for('enter_sudoku') }}" class="active">Enter</a></li>
+                    <li><a href="https://github.com/pranshu-09/Sudoku-Detection-and-Solver" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="sudoku_grid">
+                <h1>Enter Sudoku Values</h1>
+                <form method="post" action="/enter_sudoku" enctype="multipart/form-data">
+                    <input class="top left" name='00' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='01' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='02' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top left" name='03' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='04' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='05' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top left" name='06' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='07' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right top" name='08' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input class="left" name='10' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='11' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='12' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='13' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='14' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='15' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='16' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='17' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right" name='18' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input class="left" name='20' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='21' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='22' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='23' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='24' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='25' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='26' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='27' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right" name='28' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input class="top left" name='30' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='31' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='32' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top left" name='33' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='34' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='35' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top left" name='36' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='37' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right top" name='38' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input class="left" name='40' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='41' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='42' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='43' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='44' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='45' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='46' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='47' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right" name='48' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input class="left" name='50' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='51' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='52' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='53' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='54' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='55' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='56' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='57' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right" name='58' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input class="top left" name='60' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='61' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='62' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top left" name='63' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='64' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='65' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top left" name='66' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="top" name='67' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right top" name='68' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input class="left" name='70' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='71' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='72' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='73' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='74' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='75' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='76' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='77' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right" name='78' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input class="left" name='80' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='81' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='82' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='83' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='84' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='85' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="left" name='86' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class name='87' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <input class="right" name='88' type="text" onkeypress="return /[1-9]/i.test(event.key)" autocomplete="off" maxlength="1" inputmode="numeric">
+                    <br>
+                    <input type="submit" value="Submit" class="submit">
+                </form>
+            </div>
+        </nav>
+    </section>
+</body>
+</html>

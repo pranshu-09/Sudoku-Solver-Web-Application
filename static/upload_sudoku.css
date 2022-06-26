@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 60px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 13px;
+    font-size: 14px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li a.active
+{
+    background: #00FFFF;
+    color: #000080;
+}
+
+.upload_content{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.upload_content h1{
+    font-size: 50px;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #00dbde, #fc00ff);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.upload_content img{
+    /* font-size: 40px; */
+    margin-bottom: 40px;
+    width: 30%;
+    height: 30%;
+    border-radius: 10px;
+    opacity: 0.85;
+}
+
+.upload{
+    font-size: 16px;
+    color: black;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #000080;
+    width: 600px;
+    /* padding: 8px; */
+    margin-bottom: 10px;
+}
+
+::-webkit-file-upload-button{
+    color: #fff;
+    background: #008080;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 0px solid #008080;
+    transition: 0.3s;
+}
+
+::-webkit-file-upload-button:hover{
+    background: #00FFFF;
+    color: #000080;
+}
+
+.submit{
+    font-size: 16px;
+    background: #008080;
+    border-radius: 5px;
+    border: 0px solid #00FFFF;
+    padding: 10px 30px;
+    color: white;
+    transition: 0.3s;
+}
+
+.submit:hover{
+    background: #00FFFF;
+    color: #000080;
+}

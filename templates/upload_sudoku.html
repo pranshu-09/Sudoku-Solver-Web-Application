@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload_sudoku.css') }}">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='logo.png') }}" class="logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('upload_sudoku') }}" class="active">Upload</a></li>
+                    <li><a href="{{ url_for('enter_sudoku') }}">Enter</a></li>
+                    <li><a href="https://github.com/pranshu-09/Sudoku-Detection-and-Solver" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="upload_content">
+            <h1>Upload your Sudoku Image</h1>
+            <img src="{{ url_for('static', filename='note.png') }}">
+            <form method="post" action="/upload_sudoku" enctype="multipart/form-data">
+                <input type="file" name="file" autocomplete="off" required class="upload">
+                <input type="submit" value="Submit" class="submit">
+            </form>
+        </div>
+
+    </section>
+</body>
+</html>
